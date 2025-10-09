@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2y28oqb218c3"]
+
+[ext_resource type="PackedScene" uid="uid://dsh50wq7v45oo" path="res://Scenes/player.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dqouicf15o3t5" path="res://Scenes/archer.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cqh22nfopbw08" path="res://Scenes/goblin.tscn" id="3_8gbba"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_bo1nx")]
+position = Vector2(192, 491)
+
+[node name="Archer" parent="." instance=ExtResource("2_8gbba")]
+position = Vector2(822, 224)
+
+[node name="Goblin" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(840, 571)

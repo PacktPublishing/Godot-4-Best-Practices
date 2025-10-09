@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqh22nfopbw08"]
+
+[ext_resource type="Script" uid="uid://0eadnpjuqc6n" path="res://Scripts/goblin.gd" id="1_xcvi8"]
+[ext_resource type="Texture2D" uid="uid://gbkumcl4dite" path="res://Tiny Swords (Update 010)/Factions/Goblins/Troops/Torch/Yellow/Torch_Yellow.png" id="2_7w5cp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6n10i"]
+size = Vector2(75, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbw3e"]
+atlas = ExtResource("2_7w5cp")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkbyy"]
+atlas = ExtResource("2_7w5cp")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gt0r"]
+atlas = ExtResource("2_7w5cp")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6mmh"]
+atlas = ExtResource("2_7w5cp")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep384"]
+atlas = ExtResource("2_7w5cp")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajbjq"]
+atlas = ExtResource("2_7w5cp")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p60ou"]
+atlas = ExtResource("2_7w5cp")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wpiyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbw3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkbyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gt0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6mmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ep384")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajbjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p60ou")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Goblin" type="CharacterBody2D"]
+script = ExtResource("1_xcvi8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.5, -2)
+shape = SubResource("RectangleShape2D_6n10i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wpiyv")
+animation = &"idle"

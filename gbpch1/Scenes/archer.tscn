@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqouicf15o3t5"]
+
+[ext_resource type="Texture2D" uid="uid://bm34m1qvyap13" path="res://Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Red/Archer_Red.png" id="1_wenix"]
+[ext_resource type="Script" uid="uid://de86drx0c441k" path="res://Scenes/archer.gd" id="1_xpy7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpy7e"]
+size = Vector2(68, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jt3lh"]
+atlas = ExtResource("1_wenix")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g46xd"]
+atlas = ExtResource("1_wenix")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22a32"]
+atlas = ExtResource("1_wenix")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i11xr"]
+atlas = ExtResource("1_wenix")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxifh"]
+atlas = ExtResource("1_wenix")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp52x"]
+atlas = ExtResource("1_wenix")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhmuk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jt3lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g46xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22a32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i11xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxifh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp52x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Archer" type="CharacterBody2D"]
+script = ExtResource("1_xpy7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_xpy7e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fhmuk")
+animation = &"idle"
