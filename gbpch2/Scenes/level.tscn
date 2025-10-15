@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://bshxp0jo6ofeg"]
+
+[ext_resource type="Script" uid="uid://dtc6uncdw481f" path="res://Scripts/level.gd" id="1_tumq0"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_tumq0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 530.0
+offset_top = 210.0
+offset_right = 643.0
+offset_bottom = 233.0
+text = "Player Health: "
+metadata/_edit_use_anchors_ = true
+
+[node name="SaveButton" type="Button" parent="."]
+offset_left = 540.0
+offset_top = 250.0
+offset_right = 587.0
+offset_bottom = 281.0
+text = "SAVE"
+metadata/_edit_use_anchors_ = true
+
+[node name="LoadButton" type="Button" parent="."]
+offset_left = 610.0
+offset_top = 250.0
+offset_right = 662.0
+offset_bottom = 281.0
+text = "LOAD"
+metadata/_edit_use_anchors_ = true
+
+[node name="DamageButton" type="Button" parent="."]
+offset_left = 540.0
+offset_top = 300.0
+offset_right = 660.0
+offset_bottom = 331.0
+text = "TAKE DAMAGE"
+metadata/_edit_use_anchors_ = true
+
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 570.0
+offset_top = 350.0
+offset_right = 624.0
+offset_bottom = 381.0
+text = "RESET"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="DamageButton" to="." method="_on_damage_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

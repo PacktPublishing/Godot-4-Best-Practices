@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bshxp0jo6ofeg"]
+
+[ext_resource type="Script" uid="uid://dtc6uncdw481f" path="res://Scripts/level.gd" id="1_tumq0"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_tumq0")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Player Health: "
+
+[node name="SaveButton" type="Button" parent="."]
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 72.0
+offset_bottom = 81.0
+text = "SAVE"
+
+[node name="LoadButton" type="Button" parent="."]
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 152.0
+offset_bottom = 81.0
+text = "LOAD"
+
+[connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
