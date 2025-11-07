@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://dw8rusqmcbvaq"]
+
+[ext_resource type="Script" uid="uid://d07bmtetqxyxn" path="res://Scripts/Enemies/goblin.gd" id="1_5h3ne"]
+[ext_resource type="Texture2D" uid="uid://bctavprdbkyut" path="res://Assets/Sprites/Torch_Red.png" id="2_ra33l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6mjv"]
+atlas = ExtResource("2_ra33l")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu5tg"]
+atlas = ExtResource("2_ra33l")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_macxp"]
+atlas = ExtResource("2_ra33l")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyhpr"]
+atlas = ExtResource("2_ra33l")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utad2"]
+atlas = ExtResource("2_ra33l")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s2j4"]
+atlas = ExtResource("2_ra33l")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nebt"]
+atlas = ExtResource("2_ra33l")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixvp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6mjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu5tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_macxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyhpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utad2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3s2j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nebt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq4fs"]
+size = Vector2(75, 88)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vu5tg"]
+radius = 58.0086
+
+[node name="Goblin" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_5h3ne")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ixvp6")
+animation = &"idle"
+autoplay = "idle"
+frame = 4
+frame_progress = 0.779324
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.5, -6)
+shape = SubResource("RectangleShape2D_mq4fs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vu5tg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
