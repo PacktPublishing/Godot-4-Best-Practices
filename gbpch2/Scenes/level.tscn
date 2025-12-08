@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bshxp0jo6ofeg"]
+[gd_scene load_steps=3 format=3 uid="uid://bshxp0jo6ofeg"]
 
 [ext_resource type="Script" uid="uid://dtc6uncdw481f" path="res://Scripts/level.gd" id="1_tumq0"]
+[ext_resource type="PackedScene" uid="uid://decvas7yogs8m" path="res://Scenes/range_tool.tscn" id="2_k5f4k"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_tumq0")
@@ -44,6 +45,9 @@ offset_right = 624.0
 offset_bottom = 381.0
 text = "RESET"
 metadata/_edit_use_anchors_ = true
+
+[node name="RangeTool" parent="." instance=ExtResource("2_k5f4k")]
+radius = 300.0
 
 [connection signal="pressed" from="SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="LoadButton" to="." method="_on_load_button_pressed"]
