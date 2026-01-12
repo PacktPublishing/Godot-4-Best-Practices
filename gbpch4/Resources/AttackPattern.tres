@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="AttackPattern" load_steps=2 format=3 uid="uid://cug2aydo0m3ee"]
+
+[ext_resource type="Script" uid="uid://qk18uiyd1pn2" path="res://AttackPattern.gd" id="1_vumf6"]
+
+[resource]
+script = ExtResource("1_vumf6")
+damage = 10
+cooldown = 1.0
+metadata/_custom_type_script = "uid://qk18uiyd1pn2"
