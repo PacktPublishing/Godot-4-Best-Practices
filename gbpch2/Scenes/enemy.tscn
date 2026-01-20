@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7hwk8mvlnp3k"]
+[gd_scene load_steps=12 format=3 uid="uid://b7hwk8mvlnp3k"]
 
 [ext_resource type="Script" uid="uid://rn6fkhecykd7" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://bidh84bdldaw3" path="res://Assets/TNT_Purple.png" id="1_hghv2"]
+[ext_resource type="Resource" uid="uid://cajok3w8b4rlx" path="res://Resources/tnt_attack_component.tres" id="2_afpow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
 size = Vector2(89, 67)
@@ -58,6 +59,7 @@ animations = [{
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_1f0kj")
+attack_component = ExtResource("2_afpow")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
