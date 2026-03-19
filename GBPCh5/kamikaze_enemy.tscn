@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://by3le8phbivph"]
+
+[ext_resource type="PackedScene" uid="uid://ch8defyv86m88" path="res://base_enemy.tscn" id="1_5lyal"]
+[ext_resource type="Script" uid="uid://dyxphakr855s1" path="res://kamikaze_enemy.gd" id="2_ogn2e"]
+[ext_resource type="Texture2D" uid="uid://rvue7sdvh0jl" path="res://Assets/PNG/Enemies/enemyRed5.png" id="3_elta4"]
+
+[node name="KamikazeEnemy" unique_id=1538706636 instance=ExtResource("1_5lyal")]
+script = ExtResource("2_ogn2e")
+rotation_speed = 5.0
+speed = 400.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=705414737]
+texture = ExtResource("3_elta4")

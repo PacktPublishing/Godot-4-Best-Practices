@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c7pbs0g22whdm"]
+
+[ext_resource type="Script" uid="uid://dbtviv2chqo8f" path="res://player_ship.gd" id="1_sod33"]
+[ext_resource type="Texture2D" uid="uid://6q1akb8bf6xc" path="res://Assets/PNG/playerShip2_green.png" id="2_noyhe"]
+[ext_resource type="PackedScene" uid="uid://6r1jp4fs0cn4" path="res://blaster.tscn" id="3_txo0d"]
+[ext_resource type="Texture2D" uid="uid://bvmohhqlkeovi" path="res://Assets/PNG/Effects/shield3.png" id="4_5mroa"]
+[ext_resource type="AudioStream" uid="uid://bsvxqmniaxjoo" path="res://Assets/Bonus/sfx_shieldUp.ogg" id="5_xqmbi"]
+[ext_resource type="AudioStream" uid="uid://cm6uqd0qknlrn" path="res://Assets/Bonus/sfx_shieldDown.ogg" id="6_ckcqw"]
+
+[node name="PlayerShip" type="CharacterBody2D" unique_id=1753532390 groups=["Player"]]
+script = ExtResource("1_sod33")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269795135]
+texture_filter = 1
+texture = ExtResource("2_noyhe")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=988669783]
+polygon = PackedVector2Array(0, -37, 10, -18, 56, 6, 38, 34, 17, 30, 11, 38, -12, 38, -17, 29, -37, 34, -56, 6, -11, -18)
+
+[node name="Blaster" parent="." unique_id=1579966212 instance=ExtResource("3_txo0d")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1970879314]
+
+[node name="ShieldSprite" type="Sprite2D" parent="." unique_id=1100159959]
+visible = false
+texture = ExtResource("4_5mroa")
+
+[node name="ShieldUpSound" type="AudioStreamPlayer2D" parent="." unique_id=643483160]
+stream = ExtResource("5_xqmbi")
+
+[node name="ShieldDownSound" type="AudioStreamPlayer2D" parent="." unique_id=1072050303]
+stream = ExtResource("6_ckcqw")

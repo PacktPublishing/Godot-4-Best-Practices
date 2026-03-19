@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://rcas7uj0dpvk"]
+
+[ext_resource type="Texture2D" uid="uid://cuubv1uvvycw4" path="res://Assets/Backgrounds/darkPurple.png" id="1_6614m"]
+[ext_resource type="PackedScene" uid="uid://c7pbs0g22whdm" path="res://player_ship.tscn" id="2_bhu08"]
+[ext_resource type="PackedScene" uid="uid://ch8defyv86m88" path="res://base_enemy.tscn" id="3_05as6"]
+[ext_resource type="PackedScene" uid="uid://by3le8phbivph" path="res://kamikaze_enemy.tscn" id="4_5ymk8"]
+
+[node name="MainLevel" type="Node2D" unique_id=20933190]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=487449652]
+repeat_size = Vector2(1920, 1080)
+autoscroll = Vector2(0, 100)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=158502214]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 1792.0
+offset_bottom = 952.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6614m")
+stretch_mode = 1
+
+[node name="PlayerShip" parent="." unique_id=1753532390 instance=ExtResource("2_bhu08")]
+
+[node name="BaseEnemy" parent="." unique_id=1538706636 instance=ExtResource("3_05as6")]
+
+[node name="KamikazeEnemy" parent="." unique_id=1048136689 instance=ExtResource("4_5ymk8")]
