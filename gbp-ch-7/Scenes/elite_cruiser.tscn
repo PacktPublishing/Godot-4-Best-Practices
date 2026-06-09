@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://mwttu5vsnfye"]
+
+[ext_resource type="Texture2D" uid="uid://babkjnn8vrye6" path="res://Assets/enemyBlue4.png" id="1_7b84x"]
+[ext_resource type="Script" uid="uid://b8rv2n8jwmy7f" path="res://Scripts/StateMachine.gd" id="2_38o3r"]
+[ext_resource type="Script" uid="uid://dodpseuse2jil" path="res://patrol.gd" id="3_103ov"]
+[ext_resource type="Script" uid="uid://sxaid7uq3np3" path="res://chase.gd" id="4_kp1wx"]
+[ext_resource type="Script" uid="uid://dui0hpmthsiud" path="res://attack.gd" id="5_oixqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jlmm"]
+size = Vector2(82, 84)
+
+[node name="EliteCruiser" type="CharacterBody2D" unique_id=1677375642]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1817071471]
+texture = ExtResource("1_7b84x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1144467820]
+shape = SubResource("RectangleShape2D_1jlmm")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1937668041 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_38o3r")
+initial_state = NodePath("Patrol")
+
+[node name="Patrol" type="Node" parent="StateMachine" unique_id=653831215]
+script = ExtResource("3_103ov")
+
+[node name="Chase" type="Node" parent="StateMachine" unique_id=1997305661 node_paths=PackedStringArray("actor")]
+script = ExtResource("4_kp1wx")
+actor = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1293249762]
+script = ExtResource("5_oixqp")
