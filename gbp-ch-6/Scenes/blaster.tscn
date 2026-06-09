@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cq5mvw1ay2pg8"]
+
+[ext_resource type="Script" uid="uid://ccafql3nidyht" path="res://Scripts/blaster.gd" id="1_cni65"]
+[ext_resource type="AudioStream" uid="uid://bdwa5lnrkcpkp" path="res://Assets/sfx_laser1.ogg" id="2_5a6mb"]
+[ext_resource type="PackedScene" uid="uid://dupx7eqv7b2ww" path="res://Scenes/laser.tscn" id="2_fng3n"]
+[ext_resource type="PackedScene" uid="uid://y52psqg2mbvp" path="res://Scenes/plasma_blaster.tscn" id="3_q50ie"]
+
+[node name="Blaster" type="Node2D" unique_id=1893898366]
+script = ExtResource("1_cni65")
+projectile_scenes = Array[PackedScene]([ExtResource("2_fng3n"), ExtResource("3_q50ie")])
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=232041017]
+position = Vector2(0, -25)
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=1795509680]
+wait_time = 0.5
+one_shot = true
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="." unique_id=26570803]
+stream = ExtResource("2_5a6mb")
