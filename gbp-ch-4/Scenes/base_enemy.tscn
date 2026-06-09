@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cfxi614kbtrqp"]
+
+[ext_resource type="Script" uid="uid://b5son2ouy8lmk" path="res://Scripts/base_enemy.gd" id="1_kjpuc"]
+[ext_resource type="Texture2D" uid="uid://b4k4uxi2f8br1" path="res://Assets/enemyBlack1.png" id="2_t2m80"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p0xe"]
+size = Vector2(93, 84)
+
+[node name="BaseEnemy" type="Area2D" unique_id=329737491 groups=["Destructible"]]
+script = ExtResource("1_kjpuc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=558397046]
+texture_filter = 1
+texture = ExtResource("2_t2m80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1506818540]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_7p0xe")
