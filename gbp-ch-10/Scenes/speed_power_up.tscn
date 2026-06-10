@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bxx22wa0s4mbr"]
+
+[ext_resource type="PackedScene" uid="uid://xit6wurmpx5f" path="res://Scenes/base_power_up.tscn" id="1_xhfc6"]
+[ext_resource type="Script" uid="uid://dkbn2lhvrvgwg" path="res://Scripts/speed_power_up.gd" id="2_vco0u"]
+[ext_resource type="Texture2D" uid="uid://cimgts5dsu03f" path="res://Assets/bold_silver.png" id="2_vl3wt"]
+
+[node name="SpeedPowerUp" unique_id=1482667851 instance=ExtResource("1_xhfc6")]
+script = ExtResource("2_vco0u")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1648345486]
+texture = ExtResource("2_vl3wt")

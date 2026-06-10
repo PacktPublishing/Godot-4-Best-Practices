@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://xit6wurmpx5f"]
+
+[ext_resource type="Script" uid="uid://d2i7twi7g3w4n" path="res://Scripts/base_power_up.gd" id="1_0b4b7"]
+[ext_resource type="Texture2D" uid="uid://bedb8b48a1o5p" path="res://Assets/star_gold.png" id="1_p3dnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b4b7"]
+size = Vector2(31, 30)
+
+[node name="BasePowerUp" type="Area2D" unique_id=1482667851]
+collision_layer = 16
+script = ExtResource("1_0b4b7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648345486]
+texture_filter = 1
+texture = ExtResource("1_p3dnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1753438435]
+shape = SubResource("RectangleShape2D_0b4b7")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1506009210]
+rect = Rect2(-16, -15, 31, 30)

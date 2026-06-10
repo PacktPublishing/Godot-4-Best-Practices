@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bjrordhhbgdet"]
+
+[ext_resource type="Script" uid="uid://c16e2ffjpuas4" path="res://Scripts/alien_drone.gd" id="1_57mll"]
+[ext_resource type="Texture2D" uid="uid://jctuj8qfn6qv" path="res://Assets/enemyGreen3.png" id="2_kysd5"]
+[ext_resource type="Script" uid="uid://b6dep5g0777u5" path="res://Scripts/health_component.gd" id="3_d5lce"]
+[ext_resource type="PackedScene" uid="uid://bokpbl2pnxq6a" path="res://Scenes/hitbox_component.tscn" id="4_sgqbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrgrd"]
+size = Vector2(103, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7r63"]
+size = Vector2(103, 84)
+
+[node name="AlienDrone" type="CharacterBody2D" unique_id=2083150109]
+script = ExtResource("1_57mll")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=703188572]
+texture_filter = 1
+texture = ExtResource("2_kysd5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1519878981]
+shape = SubResource("RectangleShape2D_rrgrd")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1664488457]
+script = ExtResource("3_d5lce")
+
+[node name="HitboxComponent" parent="." unique_id=339103369 node_paths=PackedStringArray("health_component") instance=ExtResource("4_sgqbl")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1458329882]
+shape = SubResource("RectangleShape2D_w7r63")

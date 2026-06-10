@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://y52psqg2mbvp"]
+
+[ext_resource type="PackedScene" uid="uid://dupx7eqv7b2ww" path="res://Scenes/laser.tscn" id="1_3tu0m"]
+[ext_resource type="Texture2D" uid="uid://gcy7h377al1f" path="res://Assets/laserGreen14.png" id="2_0qufr"]
+
+[node name="PlasmaBlaster" unique_id=1663784725 instance=ExtResource("1_3tu0m")]
+speed = 1250.0
+damage = 50
+
+[node name="Sprite2D" parent="." index="0" unique_id=1040072199]
+texture = ExtResource("2_0qufr")
