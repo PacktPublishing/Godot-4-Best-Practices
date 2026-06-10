@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SpreadShotStrategy" format=3 uid="uid://468dpou82eog"]
+
+[ext_resource type="Script" uid="uid://bgukgsd4w2oua" path="res://Scripts/SpreadShotStrategy.gd" id="1_m23j8"]
+[ext_resource type="PackedScene" uid="uid://dupx7eqv7b2ww" path="res://Scenes/laser.tscn" id="1_x5pp7"]
+
+[resource]
+script = ExtResource("1_m23j8")
+laser_scene = ExtResource("1_x5pp7")
+metadata/_custom_type_script = "uid://bgukgsd4w2oua"

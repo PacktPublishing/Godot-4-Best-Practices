@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cq5mvw1ay2pg8"]
+
+[ext_resource type="Script" uid="uid://ccafql3nidyht" path="res://Scripts/blaster.gd" id="1_cni65"]
+[ext_resource type="PackedScene" uid="uid://dupx7eqv7b2ww" path="res://Scenes/laser.tscn" id="2_0h6c1"]
+[ext_resource type="AudioStream" uid="uid://cgxi72iktnked" path="res://Assets/sfx_laser1.ogg" id="2_5a6mb"]
+[ext_resource type="Script" uid="uid://dc18ipd1iu0nf" path="res://Scripts/LaserStrategy.gd" id="2_y6dic"]
+[ext_resource type="Script" uid="uid://bgukgsd4w2oua" path="res://Scripts/SpreadShotStrategy.gd" id="3_0h6c1"]
+
+[sub_resource type="Resource" id="Resource_qdqpy"]
+script = ExtResource("2_y6dic")
+laser_scene = ExtResource("2_0h6c1")
+metadata/_custom_type_script = "uid://dc18ipd1iu0nf"
+
+[sub_resource type="Resource" id="Resource_87jy3"]
+script = ExtResource("3_0h6c1")
+laser_scene = ExtResource("2_0h6c1")
+metadata/_custom_type_script = "uid://bgukgsd4w2oua"
+
+[node name="Blaster" type="Node2D" unique_id=1893898366]
+script = ExtResource("1_cni65")
+basic_weapon = SubResource("Resource_qdqpy")
+upgraded_weapon = SubResource("Resource_87jy3")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=232041017]
+position = Vector2(0, -25)
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=1795509680]
+wait_time = 0.5
+one_shot = true
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="." unique_id=26570803]
+stream = ExtResource("2_5a6mb")
