@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bsoco0oarmupb"]
+
+[ext_resource type="Script" uid="uid://b5e63rmuyg0rx" path="res://Scripts/main_level.gd" id="1_5erdv"]
+[ext_resource type="Texture2D" uid="uid://bmerflpnasq4t" path="res://Assets/darkPurple.png" id="1_qbrl8"]
+[ext_resource type="PackedScene" uid="uid://c1oierwig4tne" path="res://Scenes/player_ship.tscn" id="2_a2ia3"]
+[ext_resource type="PackedScene" uid="uid://cfxi614kbtrqp" path="res://Scenes/base_enemy.tscn" id="3_236hc"]
+[ext_resource type="PackedScene" uid="uid://bnjgci42jeo6q" path="res://Scenes/kamikaze_enemy.tscn" id="4_lwkuy"]
+[ext_resource type="PackedScene" uid="uid://cndify12ofabm" path="res://Scenes/shield_power_up.tscn" id="4_tqiex"]
+[ext_resource type="PackedScene" uid="uid://bxx22wa0s4mbr" path="res://Scenes/speed_power_up.tscn" id="5_ha3dl"]
+[ext_resource type="PackedScene" uid="uid://cf8j0libcatas" path="res://Scenes/weapon_power_up.tscn" id="6_f3gli"]
+[ext_resource type="PackedScene" uid="uid://cj5gurv4hfiiw" path="res://Scenes/enemy_spawner.tscn" id="9_ha3dl"]
+
+[node name="MainLevel" type="Node2D" unique_id=1965371843 node_paths=PackedStringArray("enemy_spawner", "powerup_spawner")]
+script = ExtResource("1_5erdv")
+enemy_spawner = NodePath("EnemySpawner")
+powerup_spawner = NodePath("PowerupSpawner")
+enemy_scenes = Array[PackedScene]([ExtResource("3_236hc"), ExtResource("4_lwkuy")])
+powerup_scenes = Array[PackedScene]([ExtResource("4_tqiex"), ExtResource("5_ha3dl"), ExtResource("6_f3gli")])
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=130868709]
+repeat_size = Vector2(1920, 1080)
+autoscroll = Vector2(0, 100)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=2040648162]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 1792.0
+offset_bottom = 952.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qbrl8")
+stretch_mode = 1
+
+[node name="PlayerShip" parent="." unique_id=142647708 instance=ExtResource("2_a2ia3")]
+
+[node name="EnemySpawner" type="Timer" parent="." unique_id=393789353]
+
+[node name="PowerupSpawner" type="Timer" parent="." unique_id=2024072337]
+
+[node name="EnemySpawner2" parent="." unique_id=1198027260 instance=ExtResource("9_ha3dl")]

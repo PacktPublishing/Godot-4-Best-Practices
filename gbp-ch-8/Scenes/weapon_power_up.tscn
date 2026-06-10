@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cf8j0libcatas"]
+
+[ext_resource type="PackedScene" uid="uid://xit6wurmpx5f" path="res://Scenes/base_power_up.tscn" id="1_hb8ss"]
+[ext_resource type="Script" uid="uid://dht8lca5drm0h" path="res://Scripts/weapon_power_up.gd" id="2_kffgb"]
+[ext_resource type="Texture2D" uid="uid://b3eqrvj3o4o75" path="res://Assets/things_bronze.png" id="3_kffgb"]
+
+[node name="WeaponPowerUp" unique_id=1482667851 instance=ExtResource("1_hb8ss")]
+script = ExtResource("2_kffgb")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1648345486]
+texture = ExtResource("3_kffgb")
