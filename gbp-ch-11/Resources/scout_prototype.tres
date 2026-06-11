@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EnemyPrototype" format=3 uid="uid://3c4mpchpikkc"]
+
+[ext_resource type="Script" uid="uid://bgmruk4crcr06" path="res://Scripts/EnemyPrototype.gd" id="1_4rysh"]
+[ext_resource type="Texture2D" uid="uid://crbiu2xqg22fr" path="res://Assets/ufoYellow.png" id="2_onxrw"]
+
+[resource]
+script = ExtResource("1_4rysh")
+prototype_id = "Scout"
+display_name = "Scout"
+base_health = 25
+movement_speed = 600.0
+sprite_texture = ExtResource("2_onxrw")
+metadata/_custom_type_script = "uid://bgmruk4crcr06"

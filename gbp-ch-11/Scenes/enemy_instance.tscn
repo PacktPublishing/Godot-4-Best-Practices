@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cmn4lndftylj5"]
+
+[ext_resource type="Script" uid="uid://8e6o4xs4d85e" path="res://Scripts/enemy_instance.gd" id="1_rvuws"]
+[ext_resource type="Script" uid="uid://bgmruk4crcr06" path="res://Scripts/EnemyPrototype.gd" id="2_7p6jt"]
+[ext_resource type="Texture2D" uid="uid://crbiu2xqg22fr" path="res://Assets/ufoYellow.png" id="3_ox537"]
+
+[sub_resource type="Resource" id="Resource_1kh6f"]
+script = ExtResource("2_7p6jt")
+prototype_id = "Scout"
+display_name = "Scout"
+base_health = 25
+movement_speed = 600.0
+sprite_texture = ExtResource("3_ox537")
+metadata/_custom_type_script = "uid://bgmruk4crcr06"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iv7fa"]
+
+[node name="EnemyInstance" type="CharacterBody2D" unique_id=1607599798]
+script = ExtResource("1_rvuws")
+stats = SubResource("Resource_1kh6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446019397]
+shape = SubResource("CircleShape2D_iv7fa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=890558091]
+texture = ExtResource("3_ox537")

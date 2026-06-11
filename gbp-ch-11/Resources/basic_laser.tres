@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LaserStrategy" format=3 uid="uid://c4dbx5gkkiti1"]
+
+[ext_resource type="PackedScene" uid="uid://dupx7eqv7b2ww" path="res://Scenes/laser.tscn" id="1_4h5la"]
+[ext_resource type="Script" uid="uid://dc18ipd1iu0nf" path="res://Scripts/LaserStrategy.gd" id="1_pqkve"]
+
+[resource]
+script = ExtResource("1_pqkve")
+laser_scene = ExtResource("1_4h5la")
+metadata/_custom_type_script = "uid://dc18ipd1iu0nf"

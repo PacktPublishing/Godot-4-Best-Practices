@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cb2w6r3vtpolc"]
+
+[ext_resource type="Script" uid="uid://yis63fpthw2q" path="res://Scripts/hud.gd" id="1_jxero"]
+[ext_resource type="Texture2D" uid="uid://d10pxdulucchg" path="res://Assets/playerLife1_green.png" id="2_4vbiv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdvrb"]
+font_size = 48
+
+[node name="UI" type="CanvasLayer" unique_id=70245246]
+
+[node name="HUD" type="Control" parent="." unique_id=577255241]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jxero")
+life_texture = ExtResource("2_4vbiv")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=1831968856]
+layout_mode = 1
+offset_right = 60.0
+offset_bottom = 25.0
+
+[node name="ScoreContainer" type="HBoxContainer" parent="HUD/MarginContainer" unique_id=136823545]
+layout_mode = 2
+alignment = 2
+
+[node name="LivesContainer" type="HBoxContainer" parent="HUD" unique_id=2086372027]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="WeaponContainer" type="HBoxContainer" parent="HUD" unique_id=1149885389]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 125.0
+offset_bottom = 70.0
+grow_horizontal = 2
+
+[node name="WeaponLabel" type="Label" parent="HUD/WeaponContainer" unique_id=603331728]
+layout_mode = 2
+text = "LASER"
+label_settings = SubResource("LabelSettings_qdvrb")
